@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "438372308986",
+    "firebase_url": "https://agape-b2ae4.firebaseio.com",
+    "project_id": "agape-b2ae4",
+    "storage_bucket": "agape-b2ae4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438372308986:android:fc1777340786c5d7",
+        "android_client_info": {
+          "package_name": "com.example.raula.agape"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438372308986-sdm1o82tmijq4m58jeciebqkg0n6oj8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.raula.agape",
+            "certificate_hash": "11381ebba5c9c4d648842c369dbda2141604290d"
+          }
+        },
+        {
+          "client_id": "438372308986-ojsib5n7uhvren7a9o1pj807plbs6l88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEoI7imZ5Co_gb3Q3SM5EGZFQ-yw_1rDA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438372308986-ojsib5n7uhvren7a9o1pj807plbs6l88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
