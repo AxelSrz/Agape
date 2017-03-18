@@ -45,27 +45,6 @@ public class AlbumFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
-        FloatingActionButton fab =
-                (FloatingActionButton)getView().findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText input = (EditText)getView().findViewById(R.id.input);
-
-                // Read the input field and push a new instance
-                // of ChatMessage to the Firebase database
-                FirebaseHelper.getPhotoLinkReference()
-                        .push()
-                        .setValue(new MessageModel(input.getText().toString(),
-                                UserModel.currentUser.name)
-                        );
-                // Clear the input
-                input.setText("");
-            }
-        });
-        */
     }
 
     @Override

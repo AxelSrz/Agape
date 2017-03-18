@@ -9,6 +9,7 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class ChatFragment extends Fragment {
     public void onStart() {
         super.onStart();
         displayChatMessages();
+        this.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         FloatingActionButton fab =
                 (FloatingActionButton)getView().findViewById(R.id.fab);
 

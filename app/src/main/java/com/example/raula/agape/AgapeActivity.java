@@ -35,7 +35,7 @@ public class AgapeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private FloatingActionButton fabAlbum;
+    private FloatingActionButton fabAlbum, fabTodo;
 
     CharSequence photoOptions[] = new CharSequence[] {"Take photo", "Choose from gallery",};
 
@@ -70,6 +70,30 @@ public class AgapeActivity extends AppCompatActivity {
             }
         });
 
+        fabTodo = (FloatingActionButton) findViewById(R.id.fab_todo);
+        fabTodo.setVisibility(View.GONE);
+        fabTodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final EditText newTodoText = new EditText(AgapeActivity.this);
+                // Click action
+                AlertDialog dialog = new AlertDialog.Builder(AgapeActivity.this)
+                        .setTitle("New To-Do")
+                        .setView(newTodoText)
+                        .setPositiveButton("Add To-Do", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                FirebaseHelper.getTodoReference()
+                                        .push()
+                                        .setValue(new TodoModel(newTodoText.getText().toString()));
+                            }
+                        })
+                        .setNegativeButton("Cancel", null)
+                        .create();
+                dialog.show();
+            }
+        });
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
@@ -83,13 +107,20 @@ public class AgapeActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                int visibility;
+                int visibilityAlbum;
+                int visibilityTodo;
                 if (position == 2){
-                    visibility = View.VISIBLE;
-                } else{
-                    visibility = View.GONE;
+                    visibilityAlbum = View.VISIBLE;
+                    visibilityTodo = View.GONE;
+                } else if (position == 1){
+                    visibilityAlbum = View.GONE;
+                    visibilityTodo = View.VISIBLE;
+                } else {
+                    visibilityAlbum = View.GONE;
+                    visibilityTodo = View.GONE;
                 }
-                fabAlbum.setVisibility(visibility);
+                fabAlbum.setVisibility(visibilityAlbum);
+                fabTodo.setVisibility(visibilityTodo);
             }
 
             @Override

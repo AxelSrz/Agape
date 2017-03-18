@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    tools:context=".MainActivity"
     android:fitsSystemWindows="true">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="302dp"
+        android:layout_gravity="center|top"
+        app:srcCompat="@drawable/logo_full"
+        android:id="@+id/imageView2" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|center"
+        android:layout_marginBottom="20dp" />
 </android.support.design.widget.CoordinatorLayout>

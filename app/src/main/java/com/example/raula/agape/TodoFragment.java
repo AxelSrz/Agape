@@ -41,23 +41,6 @@ public class TodoFragment extends Fragment {
     public void onStart() {
         super.onStart();
         displayToDo();
-        FloatingActionButton fab =
-                (FloatingActionButton)getView().findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText input = (EditText)getView().findViewById(R.id.input);
-
-                // Read the input field and push a new instance
-                // of ChatMessage to the Firebase database
-                FirebaseHelper.getTodoReference()
-                        .push()
-                        .setValue(new TodoModel(input.getText().toString()));
-                // Clear the input
-                input.setText("");
-            }
-        });
     }
 
     private void displayToDo() {
